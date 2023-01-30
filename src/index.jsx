@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import { styles } from './styles';
 import { AddItem, CustomModal, TaskList } from './components';
 import { colors } from './constants/theme/colors';
@@ -10,6 +10,7 @@ const App = () => {
   const [tasks, setTasks] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedTask, setSelectedTask] = useState(null);
+
 
   const onHandlerChange = (text) => {
     setTask(text)
@@ -60,8 +61,6 @@ const App = () => {
         onHandleCancel={onHandleCancel}
         onHandleDelete={onHandleDelete}
         selectedTask={selectedTask}
-      />
-      <CustomCheckBox
       />
     </View>
   );
